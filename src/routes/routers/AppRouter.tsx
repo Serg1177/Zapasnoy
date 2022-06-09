@@ -8,9 +8,9 @@ import { RootPage } from '../pages/RootPage';
 export const AppRouter = () => (
   <Router>
     <Routes>
-      <Route path={ROUTES_PATHS.Root} element={<RootPage />} />
-      <Route path={ROUTES_PATHS.Forbidden} element={<>{'Forbidden'}</>} />
-      <Route path={ROUTES_PATHS.NotFound} element={<>{'Not Found'}</>} />
+      <Route path={ROUTES_PATHS.root} element={<RootPage />} />
+      <Route path={ROUTES_PATHS.forbidden} element={<>{'Forbidden'}</>} />
+      <Route path={ROUTES_PATHS.notFound} element={<>{'Not Found'}</>} />
     </Routes>
   </Router>
 );

@@ -1,1 +1,1 @@
-export { RouteMap, ROUTES_PATHS } from './constants';
+export { PathsEnum, ROUTES_PATHS } from './constants';
