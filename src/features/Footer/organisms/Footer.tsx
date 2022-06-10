@@ -1,5 +1,16 @@
 import * as React from 'react';
 
-export interface IFooter {}
+import { Col, Row, Typography } from 'antd';
+import styled from 'styled-components';
 
-export const Footer: React.FC<IFooter> = () => <>{'Footer'}</>;
+const StyledParagraph = styled(Typography.Paragraph)`
+  color: ${(props) => props.theme.palette.disabledText};
+`;
+
+export const Footer: React.FC = () => (
+  <Row justify='center'>
+    <Col>
+      <StyledParagraph>{'«Инфопрофиль» | Все права защищены.'}</StyledParagraph>
+    </Col>
+  </Row>
+);
