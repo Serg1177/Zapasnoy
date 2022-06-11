@@ -13,13 +13,13 @@ const StyledBadge = styled(Badge)`
 `;
 
 const StyledBellOutlined = styled(BellOutlined)`
-  color: ${(props) => props.theme.palette.disabledText};
+  color: ${(props) => props.theme.palette.typography.disabled}};
   font-size: ${(props) => props.theme.typography.fontSize(9)};
 `;
 
 const StyledLink = styled(Typography.Link)`
   &&& {
-    color: ${(props) => props.theme.palette.defaultText};
+    color: ${(props) => props.theme.palette.typography.default}};
   }
 `;
 

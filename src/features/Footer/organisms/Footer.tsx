@@ -4,7 +4,7 @@ import { Col, Row, Typography } from 'antd';
 import styled from 'styled-components';
 
 const StyledParagraph = styled(Typography.Paragraph)`
-  color: ${(props) => props.theme.palette.disabledText};
+  color: ${(props) => props.theme.palette.typography.disabled};
 `;
 
 export const Footer: React.FC = () => (

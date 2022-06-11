@@ -1,9 +1,16 @@
 import 'styled-components';
 
 interface IPalette {
-  background: string;
-  defaultText: string;
-  disabledText: string;
+  borders: {
+    default: string;
+  };
+  layout: {
+    background: string;
+  };
+  typography: {
+    default: string;
+    disabled: string;
+  };
 }
 
 interface ITypography {
