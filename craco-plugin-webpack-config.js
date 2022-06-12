@@ -6,8 +6,6 @@ module.exports = {
             console.log(pluginOptions.preText);
         }
 
-        // console.log(JSON.stringify(webpackConfig, null, 4));
-
         // Always return the config object.
         return {
             ...webpackConfig,

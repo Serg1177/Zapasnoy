@@ -11,7 +11,7 @@ module.exports = async function({ env }) {
 
     return  {
         plugins: [
-            { plugin: logWebpackConfigPlugin, options: { preText: "Will log the webpack config:" } }
+            { plugin: logWebpackConfigPlugin, options: { preText: "Apply webpack config" } }
         ]
     };
 }

@@ -17,6 +17,7 @@
     "@types/redux-thunk": "^2.1.0",
     "antd": "^4.20.6",
     "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
     "moment": "^2.29.3",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -34,77 +35,10 @@
   },
   "scripts": {
     "start": "craco start",
+    "start:dev": "set REACT_APP_ENV=local && craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended"
-    ],
-    "ignorePatterns": [
-      "*.config.js"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "eslint-plugin-import-helpers",
-      "@typescript-eslint"
-    ],
-    "rules": {
-      "no-unused-vars": "off",
-      "jsx-quotes": ["error", "prefer-single"],
-      "@typescript-eslint/no-unused-vars": [
-        "error"
-      ],
-      "@typescript-eslint/no-empty-interface": "off",
-      "object-curly-spacing": [
-        "error",
-        "always"
-      ],
-      "max-len": [
-        "error",
-        120,
-        2,
-        {
-          "ignoreComments": true
-        }
-      ],
-      "quotes": [
-        "error",
-        "single"
-      ],
-      "eol-last": [
-        "error",
-        "always"
-      ],
-      "semi": [
-        "error",
-        "always"
-      ],
-      "import-helpers/order-imports": [
-        "error",
-        {
-          "groups": [
-            "/^react$/",
-            "module",
-            "/^~/",
-            "parent",
-            [
-              "sibling",
-              "index"
-            ]
-          ],
-          "newlinesBetween": "always",
-          "alphabetize": {
-            "order": "asc",
-            "ignoreCase": true
-          }
-        }
-      ]
-    }
   },
   "browserslist": {
     "production": [
