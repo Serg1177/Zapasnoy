@@ -1,4 +1,3 @@
-// import * as React from 'react';
 import React, { useState } from 'react';
 
 import { Footer } from '~/features/Footer';
@@ -11,11 +10,9 @@ export const RootPage: React.FC = () => {
 
   const [user, setUser] = useState(false);
 
-
   if(!user){
     return <Login setUser={setUser} />;
   }
-
   return <PageTemplate
     content={<Search />}
     footer={<Footer />}
