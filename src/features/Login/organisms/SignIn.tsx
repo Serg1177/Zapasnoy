@@ -65,13 +65,8 @@ const SignIn = ({ onPress }: any) => {
             <Checkbox>Доверять этому устройству</Checkbox>
           </Form.Item>
 
-          <Form.Item
-            // wrapperCol={{
-            //   offset: 8,
-            //   span: 16,
-            // }}
-          >
-            <Button style={{ width:'100%',borderRadius:4 }} type='primary' htmlType='submit'>
+          <Form.Item          >
+            <Button onClick={onPress} style={{ width:'100%',borderRadius:4 }} type='primary' htmlType='submit'>
               Войти
             </Button>
           </Form.Item>
