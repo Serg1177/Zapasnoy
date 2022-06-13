@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import { Col, Row } from 'antd';
 import styled from 'styled-components';
@@ -28,7 +28,11 @@ const StyledH2 = styled.h2`
   padding-left: 15px;
 `;
 
-const AuthLayout = ({ children }: any) => {
+type Props = {
+  children: ReactNode
+}
+
+const AuthLayout = ({ children }: Props) => {
   return (
     <Row>
       <Col span={14}>
