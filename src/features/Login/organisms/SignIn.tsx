@@ -3,20 +3,20 @@ import React from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
 import { Row } from 'antd';
 import { Typography } from 'antd';
-import { ValidateErrorEntity } from 'rc-field-form/lib/interface';
 
 const { Title, Text } = Typography;
 
 type Props = {
-  onPress: () => void;
+  onSubmit: () => void;
+  onRestore: () => void;
 };
 
-const SignIn = ({ onPress }: Props) => {
+const SignIn = ({ onSubmit, onRestore }: Props) => {
   const onFinish = (values: object) => {
     console.log('Success:', values);
   };
 
-  const onFinishFailed = (errorInfo: ValidateErrorEntity<object>) => {
+  const onFinishFailed = (errorInfo: object) => {
     console.log('Failed:', errorInfo);
   };
   return (
@@ -71,7 +71,7 @@ const SignIn = ({ onPress }: Props) => {
 
         <Form.Item>
           <Button
-            onClick={onPress}
+            onClick={onSubmit}
             style={{ width: '100%', borderRadius: 4 }}
             type='primary'
             htmlType='submit'
@@ -82,7 +82,7 @@ const SignIn = ({ onPress }: Props) => {
       </Form>
       <Row align={'middle'}>
         <Text style={{ margin: 0 }}>Не получается войти?</Text>
-        <Button onClick={onPress} style={{ margin: 0 }} type='link'>
+        <Button onClick={onRestore} style={{ margin: 0 }} type='link'>
           Восстановить пароль
         </Button>
       </Row>

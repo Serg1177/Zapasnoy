@@ -8,7 +8,7 @@ import AuthLayout from './AuthLayout';
 import RestorePassword from './RestorePassword';
 import SignIn from './SignIn';
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 type Props = {
   setUser: (user: boolean) => void;
@@ -19,6 +19,9 @@ export const Login: React.FC<Props> = ({ setUser }: Props) => {
 
   const handleSignIn = () => {
     setUser(true);
+  };
+
+  const hanldeRestoreClick = () => {
     setUpdate(true);
   };
 
@@ -36,11 +39,14 @@ export const Login: React.FC<Props> = ({ setUser }: Props) => {
             </Title>
           </Row>
           {!isUpdate ? (
-            <SignIn onPress={handleSignIn} />
+            <SignIn onSubmit={handleSignIn} onRestore={hanldeRestoreClick} />
           ) : (
             <RestorePassword onPress={() => setUpdate(false)} />
           )}
         </div>
+        <Text style={{ position:'absolute',bottom: 10, color:'#A0A5B1' }}>
+          ООО «Всевидящее око» | Все права защищиены.
+          </Text>
       </Row>
     </AuthLayout>
   );
