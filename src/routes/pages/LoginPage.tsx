@@ -4,9 +4,9 @@ import { Row, Image, Typography } from 'antd';
 
 import logo from '~/ui/images/logo.png';
 
-import AuthLayout from './AuthLayout';
-import RestorePassword from './RestorePassword';
-import SignIn from './SignIn';
+import AuthLayout from '../../features/Login/organisms/AuthLayout';
+import RestorePassword from '../../features/Login/organisms/RestorePassword';
+import SignIn from '../../features/Login/organisms/SignIn';
 
 const { Title, Text } = Typography;
 
@@ -44,9 +44,9 @@ export const Login: React.FC<Props> = ({ setUser }: Props) => {
             <RestorePassword onPress={() => setUpdate(false)} />
           )}
         </div>
-        <Text style={{ position:'absolute',bottom: 10, color:'#A0A5B1' }}>
+        <Text style={{ position: 'absolute', bottom: 10, color: '#A0A5B1' }}>
           ООО «Всевидящее око» | Все права защищиены.
-          </Text>
+        </Text>
       </Row>
     </AuthLayout>
   );
