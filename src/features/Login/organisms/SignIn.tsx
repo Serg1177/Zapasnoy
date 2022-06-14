@@ -6,6 +6,12 @@ import { Typography } from 'antd';
 
 const { Title, Text } = Typography;
 
+const initValues = {
+  remember: false,
+  username: '',
+  password: '',
+};
+
 type Props = {
   onSubmit: () => void;
   onRestore: () => void;
@@ -14,6 +20,7 @@ type Props = {
 const SignIn = ({ onSubmit, onRestore }: Props) => {
   const onFinish = (values: object) => {
     console.log('Success:', values);
+    onSubmit();
   };
 
   const onFinishFailed = (errorInfo: object) => {
@@ -27,20 +34,16 @@ const SignIn = ({ onSubmit, onRestore }: Props) => {
       </Title>
       <Form
         name='basic'
-        initialValues={{
-          remember: false,
-          username: '',
-          password: '',
-        }}
+        initialValues={initValues}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
-        autoComplete='off'
+        autoComplete='on'
       >
         <Form.Item
           name='username'
           rules={[
             {
-              required: false,
+              required: true,
               message: 'Please input your username!',
             },
           ]}
@@ -52,7 +55,7 @@ const SignIn = ({ onSubmit, onRestore }: Props) => {
           name='password'
           rules={[
             {
-              required: false,
+              required: true,
               message: 'Please input your password!',
             },
           ]}
@@ -71,7 +74,7 @@ const SignIn = ({ onSubmit, onRestore }: Props) => {
 
         <Form.Item>
           <Button
-            onClick={onSubmit}
+           
             style={{ width: '100%', borderRadius: 4 }}
             type='primary'
             htmlType='submit'

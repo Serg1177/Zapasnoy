@@ -9,6 +9,10 @@ import ModalOwn from '~/features/common/Modal';
 
 const { Title, Text } = Typography;
 
+const initValues = {
+  email: ''
+};
+
 type Props = {
   onPress: () => void;
 };
@@ -18,14 +22,11 @@ const RestorePassword = ({ onPress }: Props) => {
 
   const onFinish = (values: object) => {
     console.log('Success:', values);
+    setIsModalVisible(true);
   };
 
   const onFinishFailed = (errorInfo: object) => {
     console.log('Failed:', errorInfo);
-  };
-
-  const showModal = () => {
-    setIsModalVisible(true);
   };
 
   return (
@@ -47,21 +48,17 @@ const RestorePassword = ({ onPress }: Props) => {
       </Row>
       <Form
         name='basic'
-        initialValues={{
-          remember: false,
-          username: '',
-          password: '',
-        }}
+        initialValues={initValues}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
-        // autoComplete="off"
       >
         <Form.Item
-          name='username'
+          name='email'
           rules={[
             {
-              required: false,
-              message: 'Please input your username!',
+              type: 'email',
+              required: true,
+              message: 'Введите корректный емайл!',
             },
           ]}
           style={{ marginBottom: 12 }}
@@ -72,7 +69,6 @@ const RestorePassword = ({ onPress }: Props) => {
         <Form.Item>
           <Button
             style={{ width: '100%', borderRadius: 4 }}
-            onClick={() => showModal()}
             type='primary'
             htmlType='submit'
           >
