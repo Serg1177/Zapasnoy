@@ -1,9 +1,11 @@
 import React, { ReactNode } from 'react';
 
-import { Col, Row } from 'antd';
+import { Col, Row, Typography } from 'antd';
 import styled from 'styled-components';
 
 import background from '~/ui/images/background.png';
+
+const { Title } = Typography;
 
 const LoginImage = styled.div`
   background-image: url(${background});
@@ -16,7 +18,7 @@ const LoginImage = styled.div`
   font-size: 5rem;
 `;
 
-const StyledH2 = styled.h2`
+const StyledTitle = styled(Title)`
   margin: 1;
   font-weight: 640;
   font-size: 2.7rem;
@@ -37,9 +39,9 @@ const AuthLayout = ({ children }: Props) => {
     <Row>
       <Col span={14}>
         <LoginImage >
-          <StyledH2 >
+          <StyledTitle level={2} >
             Единая Информационная Система
-          </StyledH2>
+          </StyledTitle>
         </LoginImage>
       </Col>
       <Col span={10}>{children}</Col>
