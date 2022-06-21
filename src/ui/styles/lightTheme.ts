@@ -10,11 +10,13 @@ export const lightTheme: DefaultTheme = {
     },
     typography: {
       default: '#000000',
-      disabled: '#a0a5b1',
+      disabled: '#a0a5b1'
     },
+
   },
   spacing: (factor: number) => `${8 * factor}px`,
   typography: {
     fontSize: (factor: number) => `${2 * factor}px`,
   },
+
 };

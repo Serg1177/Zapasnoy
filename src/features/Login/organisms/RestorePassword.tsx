@@ -4,6 +4,7 @@ import { ArrowLeftOutlined } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
 import { Row } from 'antd';
 import { Typography } from 'antd';
+import styled from 'styled-components';
 
 import ModalOwn from '~/features/common/Modal';
 
@@ -13,15 +14,23 @@ const initValues = {
   email: ''
 };
 
-type Props = {
-  onPress: () => void;
-};
+const StyledBlock = styled.div`
+  margin-top: 50
+`;
 
-const RestorePassword = ({ onPress }: Props) => {
+interface Props  {
+  onPress: () => void;
+}
+
+const RestorePassword: React.FC<Props> = ({ onPress }: Props) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const onFinish = (values: object) => {
     console.log('Success:', values);
+    
+  };
+
+  const onSupport = () => {
     setIsModalVisible(true);
   };
 
@@ -30,7 +39,7 @@ const RestorePassword = ({ onPress }: Props) => {
   };
 
   return (
-    <div style={{ marginTop: 50 }}>
+    <StyledBlock style={{ marginTop: 50 }}>
       <Row>
         <ArrowLeftOutlined
           onClick={onPress}
@@ -78,7 +87,7 @@ const RestorePassword = ({ onPress }: Props) => {
       </Form>
       <Row align={'middle'}>
         <Text style={{ margin: 0 }}>Не помните емайл?</Text>
-        <Button style={{ margin: 0 }} type='link'>
+        <Button style={{ margin: 0 }} onClick={onSupport} type='link'>
           Служба поддержки
         </Button>
         <ModalOwn
@@ -86,7 +95,7 @@ const RestorePassword = ({ onPress }: Props) => {
           setIsModalVisible={setIsModalVisible}
         />
       </Row>
-    </div>
+    </StyledBlock>
   );
 };
 

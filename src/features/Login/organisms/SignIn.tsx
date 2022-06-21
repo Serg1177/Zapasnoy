@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { Button, Checkbox, Form, Input } from 'antd';
-import { Row } from 'antd';
-import { Typography } from 'antd';
+import { Row, Typography } from 'antd';
 
 const { Title, Text } = Typography;
 
@@ -11,6 +10,7 @@ const initValues = {
   username: '',
   password: '',
 };
+
 
 type Props = {
   onSubmit: () => void;
@@ -29,7 +29,7 @@ const SignIn = ({ onSubmit, onRestore }: Props) => {
   return (
     <div>
       <Text>Добро пожаловать</Text>
-      <Title style={{ margin: 0, marginBottom: 20 }} level={5}>
+      <Title style={{ margin: 0, marginBottom: 10 }} level={5}>
         Войдите в ваш аккаунт
       </Title>
       <Form
@@ -59,7 +59,7 @@ const SignIn = ({ onSubmit, onRestore }: Props) => {
               message: 'Please input your password!',
             },
           ]}
-          style={{ marginBottom: 12 }}
+          style={{ marginBottom: 6 }}
         >
           <Input.Password placeholder={'Ваш пароль'} />
         </Form.Item>
@@ -73,8 +73,7 @@ const SignIn = ({ onSubmit, onRestore }: Props) => {
         </Form.Item>
 
         <Form.Item>
-          <Button
-           
+          <Button  
             style={{ width: '100%', borderRadius: 4 }}
             type='primary'
             htmlType='submit'

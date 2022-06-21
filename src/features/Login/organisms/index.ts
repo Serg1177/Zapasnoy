@@ -1,1 +1,1 @@
-export { Login } from '../../../routes/pages/LoginPage';
+export { Auth } from './Auth';

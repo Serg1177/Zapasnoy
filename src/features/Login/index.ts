@@ -1,1 +1,1 @@
-export { Login } from './organisms';
+export { Auth } from './organisms/Auth';

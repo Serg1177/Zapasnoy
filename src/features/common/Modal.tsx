@@ -1,11 +1,13 @@
 import React from 'react';
 
-import { Button, Modal, Row } from 'antd';
+import { Button, Modal, Row, Typography } from 'antd';
 
 type Props = {
   isModalVisible: boolean;
   setIsModalVisible: (flag: boolean) => void;
 }
+
+const { Text, } = Typography;
 
 const ModalOwn = ({ isModalVisible, setIsModalVisible }: Props) => {
 
@@ -38,7 +40,7 @@ const ModalOwn = ({ isModalVisible, setIsModalVisible }: Props) => {
       onOk={handleOk}
       onCancel={handleCancel}
     >
-      <p>Форма контакта с админом с обратной связью</p>
+      <Text >Форма контакта с админом с обратной связью</Text>
     </Modal>
   );
 };
