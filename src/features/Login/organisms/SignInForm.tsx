@@ -12,12 +12,12 @@ const initValues = {
 };
 
 
-type Props = {
+interface IProps {
   onSubmit: () => void;
   onRestore: () => void;
-};
+}
 
-const SignIn = ({ onSubmit, onRestore }: Props) => {
+export const SignInForm = ({ onSubmit, onRestore }: IProps) => {
   const onFinish = (values: object) => {
     console.log('Success:', values);
     onSubmit();
@@ -92,4 +92,4 @@ const SignIn = ({ onSubmit, onRestore }: Props) => {
   );
 };
 
-export default SignIn;
+
