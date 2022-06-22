@@ -9,7 +9,6 @@ import logo from '~/ui/images/logo.png';
 import RestorePassword from './RestorePassword';
 import { SignInForm } from './SignInForm';
 
-
 const { Title, Text } = Typography;
 
 const LoginImage = styled.div`
